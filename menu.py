@@ -52,7 +52,7 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
-
+menu_selection = "Snacks", "Meals", "Burger", "Drinks", "Dessert",
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
@@ -118,59 +118,73 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-
+                menu_selection = input("What Number would you like? ")
 
             # 3. Check if the customer typed a number
-
+        elif menu_selection .isdigit():
                 # Convert the menu selection to an integer
-
+                 menu_selection = int
 
                 # 4. Check if the menu selection is in the menu items
-
+                 menu_selection = menu_items
                     # Store the item name as a variable
 
 
                     # Ask the customer for the quantity of the menu item
-
-
+        menu_items = input("what quanity do you want? ")
+        if menu_items.isdigit():
+                    menu_items = int(menu_items)
+                    break
                     # Check if the quantity is a number, default to 1 if not
-
+                   
 
                     # Add the item name, price, and quantity to the order list
 
 
                     # Tell the customer that their input isn't valid
-
+        print(f"{menu_selection} your selection was not valid")
 
                 # Tell the customer they didn't select a menu option
-
-        else:
+        print(f"{menu_selection} was not a menu option.")
+       
+    else:
             # Tell the customer they didn't select a menu option
-            print(f"{menu_category} was not a menu option.")
+        print(f"{menu_category} was not a menu option.")
+        
     else:
         # Tell the customer they didn't select a number
-        print("You didn't select a number.")
+    print("You didn't select a number.")
 
     while True:
         # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
 
         # 5. Check the customer's input
+        match keep_ordering.lower():
+                # Customer chose yes
+        case 'y':
+                # Customer Chose no
+        case 'n':
+                  break
+             
+            # Keep ordering
+        place_order = True
 
-                # Keep ordering
-
-                # Exit the keep ordering question loop
+            # Exit the keep ordering question loop
+        break
 
                 # Complete the order
-
+    place_order = False
+        
                 # Since the customer decided to stop ordering, thank them for
                 # their order
-
+    print("Thank you for your order.")
+        
                 # Exit the keep ordering question loop
-
-
+    break
+    
                 # Tell the customer to try again
-
+print("i didn't get your response. Please try again. ")
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
@@ -187,7 +201,9 @@ print("--------------------------|--------|----------")
 
 
     # 8. Calculate the number of spaces for formatted printing
-
+num_item_spaces = 24 - len(key)
+item_spaces = " " * num_item_spaces
+print(f"{item_}")
 
     # 9. Create space strings
 
